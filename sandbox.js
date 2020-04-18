@@ -18,8 +18,7 @@ var BMIMark = massMark / (heightMark * heightMark);
 var BMIJohn = massJohn / (heightJohn * heightJohn);
 console.log(BMIMark, BMIJohn);
 var markHigherBMI = BMIMark > BMIJohn;
-console.log('Is Mark\'s BMI higher than John\'s? ' + markHigherBMI);
-
+console.log("Is Mark's BMI higher than John's? " + markHigherBMI);
 
 /*
 CODING CHALLENGE 2
@@ -51,13 +50,23 @@ var teamDraw = (teamJohn + teamMary + teamMike) / 3;
 // }
 
 if (teamJohn > teamMike && teamJohn > teamMary) {
-   console.log('John\'s team is the winner, with an average of ' + teamJohn + ' points');
+  console.log(
+    "John's team is the winner, with an average of " + teamJohn + " points"
+  );
 } else if (teamMike > teamJohn && teamMike > teamMary) {
-   console.log('Mike\'s team is the winner, with an average of ' + teamMike + ' points');
+  console.log(
+    "Mike's team is the winner, with an average of " + teamMike + " points"
+  );
 } else if (teamMary > teamJohn && teamMary > teamMike) {
-   console.log('Mary\'s team is the winner, with an average of ' + teamMary + ' points');
+  console.log(
+    "Mary's team is the winner, with an average of " + teamMary + " points"
+  );
 } else {
-   console.log('It\s a draw! two, or all three teams have an average of' + teamDraw + ' points.');
+  console.log(
+    "Its a draw! two, or all three teams have an average of" +
+      teamDraw +
+      " points."
+  );
 }
 
 /*
@@ -71,21 +80,47 @@ In the end, John would like to have 2 arrays:
 GOOD LUCK 😀
 */
 
+// use an if/else statement
 function tipCalc(bill) {
-   var percentage;
-   if (bill < 50) {
-      percentage = .2;
-   } else if (bill >= 50 && bill < 200) {
-      percentage = .15;
-   } else {
-      percentage = .1;
-   }
-   return percentage * bill;
+  var percentage;
+  if (bill < 50) {
+    percentage = 0.2;
+  } else if (bill >= 50 && bill < 200) {
+    percentage = 0.15;
+  } else {
+    percentage = 0.1;
+  }
+  return percentage * bill;
 }
 
 var bills = [124, 48, 268];
 var tips = [tipCalc(bills[0]), tipCalc(bills[1]), tipCalc(bills[2])];
 var total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
 
+// console.log(bills, tips, total);
 
-console.log(bills, tips, total);
+var bills = [124, 48, 268];
+function calculateTip(bill) {
+  switch (true) {
+    case bill < 50:
+      return bill * 0.2;
+    case bill < 200:
+      return bill * 0.15;
+    default:
+      return bill * 0.1;
+  }
+}
+// use a switch statement
+var tips = [],
+  fullBill = [];
+tips.push(calculateTip(bills[0]));
+tips.push(calculateTip(bills[1]));
+tips.push(calculateTip(bills[2]));
+
+fullBill.push(tips[0] + bills[0]);
+fullBill.push(tips[1] + bills[1]);
+fullBill.push(tips[2] + bills[2]);
+
+console.log(bills);
+console.log(tips);
+console.log(fullBill);
