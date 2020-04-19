@@ -220,3 +220,70 @@ var john = {
 
 john.calcTips();
 console.log(john);
+
+/*
+EXTRA AFTER FINISHING: Mark's family also went on a holiday, going to 4 different restaurants. The bills were $77, $375, $110, and $45.
+Mark likes to tip 20% of the bill when the bill is less than $100, 10% when the bill is between $100 and $300, and 25% if the bill is more than $300 (different than John).
+5. Implement the same functionality as before, this time using Mark's tipping rules
+6. Create a function (not a method) to calculate the average of a given array of tips. HINT: Loop over the array, and in each iteration store the current sum in a variable (starting from 0). After you have the sum of the array, divide it by the number of elements in it (that's how you calculate the average)
+7. Calculate the average tip for each family
+8. Log to the console which family paid the highest tips on average
+*/
+
+var mark = {
+  fullName: "Mark Jones",
+  bills: [77, 475, 110, 45],
+  calcTips: function () {
+    this.tips = [];
+    this.total = [];
+
+    for (var i = 0; i < this.bills.length; i++) {
+      var percentage;
+      var bill = this.bills[i];
+
+      // get the tipping percentages
+      if (bill < 100) {
+        percentage = 0.2;
+      } else if (bill >= 100 && bill < 300) {
+        percentage = 0.1;
+      } else {
+        percentage = 0.25;
+      }
+
+      // add results to the corresponding arrays
+      this.tips[i] = bill * percentage;
+      this.total[i] = bill + bill * percentage;
+    }
+  },
+};
+
+mark.calcTips();
+console.log(mark);
+
+getAverage = function (tips) {
+  var total = 0;
+  for (var i = 0; i < tips.length; i++) {
+    total = total + tips[i];
+  }
+  return total / tips.length;
+};
+
+john.average = getAverage(john.tips);
+mark.average = getAverage(mark.tips);
+console.log(john, mark);
+
+if (john.average > mark.average) {
+  console.log(
+    john.fullName +
+      "'s family pays higher tips, with an average of $" +
+      john.average
+  );
+} else if (mark.average > john.average) {
+  console.log(
+    mark.fullName +
+      "'s family pays higher tips, with an average of $" +
+      mark.average
+  );
+} else {
+  console.log("It's a draw!");
+}
