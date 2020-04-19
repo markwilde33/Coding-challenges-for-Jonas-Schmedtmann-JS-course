@@ -10,15 +10,15 @@ true").
 GOOD LUCK 😀
 */
 
-var massMark = 78; // kg
-var heightMark = 1.69; // meters
-var massJohn = 92;
-var heightJohn = 1.95;
-var BMIMark = massMark / (heightMark * heightMark);
-var BMIJohn = massJohn / (heightJohn * heightJohn);
-console.log(BMIMark, BMIJohn);
-var markHigherBMI = BMIMark > BMIJohn;
-console.log("Is Mark's BMI higher than John's? " + markHigherBMI);
+// var massMark = 78; // kg
+// var heightMark = 1.69; // meters
+// var massJohn = 92;
+// var heightJohn = 1.95;
+// var BMIMark = massMark / (heightMark * heightMark);
+// var BMIJohn = massJohn / (heightJohn * heightJohn);
+// console.log(BMIMark, BMIJohn);
+// var markHigherBMI = BMIMark > BMIJohn;
+// console.log("Is Mark's BMI higher than John's? " + markHigherBMI);
 
 /*
 CODING CHALLENGE 2
@@ -31,10 +31,10 @@ John and Mike both play basketball in different teams. In the latest 3 games, Jo
 GOOD LUCK 😀
 */
 
-var teamJohn = (100 + 120 + 94) / 3;
-var teamMike = (100 + 94 + 120) / 3;
-var teamMary = (94 + 120 + 100) / 3;
-var teamDraw = (teamJohn + teamMary + teamMike) / 3;
+// var teamJohn = (100 + 120 + 94) / 3;
+// var teamMike = (100 + 94 + 120) / 3;
+// var teamMary = (94 + 120 + 100) / 3;
+// var teamDraw = (teamJohn + teamMary + teamMike) / 3;
 
 // console.log(teamJohn, teamMike, teamMary);
 
@@ -49,25 +49,25 @@ var teamDraw = (teamJohn + teamMary + teamMike) / 3;
 //    console.log('It\s a draw! both teams have ' + teamMike + ' points.');
 // }
 
-if (teamJohn > teamMike && teamJohn > teamMary) {
-  console.log(
-    "John's team is the winner, with an average of " + teamJohn + " points"
-  );
-} else if (teamMike > teamJohn && teamMike > teamMary) {
-  console.log(
-    "Mike's team is the winner, with an average of " + teamMike + " points"
-  );
-} else if (teamMary > teamJohn && teamMary > teamMike) {
-  console.log(
-    "Mary's team is the winner, with an average of " + teamMary + " points"
-  );
-} else {
-  console.log(
-    "Its a draw! two, or all three teams have an average of" +
-      teamDraw +
-      " points."
-  );
-}
+// if (teamJohn > teamMike && teamJohn > teamMary) {
+//   console.log(
+//     "John's team is the winner, with an average of " + teamJohn + " points"
+//   );
+// } else if (teamMike > teamJohn && teamMike > teamMary) {
+//   console.log(
+//     "Mike's team is the winner, with an average of " + teamMike + " points"
+//   );
+// } else if (teamMary > teamJohn && teamMary > teamMike) {
+//   console.log(
+//     "Mary's team is the winner, with an average of " + teamMary + " points"
+//   );
+// } else {
+//   console.log(
+//     "Its a draw! two, or all three teams have an average of" +
+//       teamDraw +
+//       " points."
+//   );
+// }
 
 /*
 CODING CHALLENGE 3
@@ -81,46 +81,142 @@ GOOD LUCK 😀
 */
 
 // use an if/else statement
-function tipCalc(bill) {
-  var percentage;
-  if (bill < 50) {
-    percentage = 0.2;
-  } else if (bill >= 50 && bill < 200) {
-    percentage = 0.15;
-  } else {
-    percentage = 0.1;
-  }
-  return percentage * bill;
-}
+// function tipCalc(bill) {
+//   var percentage;
+//   if (bill < 50) {
+//     percentage = 0.2;
+//   } else if (bill >= 50 && bill < 200) {
+//     percentage = 0.15;
+//   } else {
+//     percentage = 0.1;
+//   }
+//   return percentage * bill;
+// }
 
-var bills = [124, 48, 268];
-var tips = [tipCalc(bills[0]), tipCalc(bills[1]), tipCalc(bills[2])];
-var total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+// var bills = [124, 48, 268];
+// var tips = [tipCalc(bills[0]), tipCalc(bills[1]), tipCalc(bills[2])];
+// var total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
 
-// console.log(bills, tips, total);
+// // console.log(bills, tips, total);
 
-var bills = [124, 48, 268];
-function calculateTip(bill) {
-  switch (true) {
-    case bill < 50:
-      return bill * 0.2;
-    case bill < 200:
-      return bill * 0.15;
-    default:
-      return bill * 0.1;
-  }
-}
-// use a switch statement
-var tips = [],
-  fullBill = [];
-tips.push(calculateTip(bills[0]));
-tips.push(calculateTip(bills[1]));
-tips.push(calculateTip(bills[2]));
+// var bills = [124, 48, 268];
+// function calculateTip(bill) {
+//   switch (true) {
+//     case bill < 50:
+//       return bill * 0.2;
+//     case bill < 200:
+//       return bill * 0.15;
+//     default:
+//       return bill * 0.1;
+//   }
+// }
+// // use a switch statement
+// var tips = [],
+//   fullBill = [];
+// tips.push(calculateTip(bills[0]));
+// tips.push(calculateTip(bills[1]));
+// tips.push(calculateTip(bills[2]));
 
-fullBill.push(tips[0] + bills[0]);
-fullBill.push(tips[1] + bills[1]);
-fullBill.push(tips[2] + bills[2]);
+// fullBill.push(tips[0] + bills[0]);
+// fullBill.push(tips[1] + bills[1]);
+// fullBill.push(tips[2] + bills[2]);
 
-console.log(bills);
-console.log(tips);
-console.log(fullBill);
+// console.log(bills);
+// console.log(tips);
+// console.log(fullBill);
+
+/*
+CODING CHALLENGE 4
+Let's remember the first coding challenge where Mark and John compared their BMIs. Let's now implement the same functionality with objects and methods.
+1. For each of them, create an object with properties for their full name, mass, and height
+2. Then, add a method to each object to calculate the BMI. Save the BMI to the object and also return it from the method.
+3. In the end, log to the console who has the highest BMI, together with the full name and the respective BMI. Don't forget they might have the same BMI.
+Remember: BMI = mass / height^2 = mass / (height * height). (mass in kg and height in meter).
+GOOD LUCK 😀
+*/
+
+// console.log(BMIMark, BMIJohn);
+// var markHigherBMI = BMIMark > BMIJohn;
+// console.log("Is Mark's BMI higher than John's? " + markHigherBMI);
+
+// var mark = {
+//   fullName: "Mark Jones",
+//   mass: 78, // kg
+//   height: 1.69, // meters
+//   calcBMI: function () {
+//     this.bmi = this.mass / (this.height * this.height);
+//     return this.bmi;
+//   },
+// };
+
+// var john = {
+//   fullName: "John Owen",
+//   mass: 92, // kg
+//   height: 1.95, // meters
+//   calcBMI: function () {
+//     this.bmi = this.mass / (this.height * this.height);
+//     return this.bmi;
+//   },
+// };
+
+// john.calcBMI();
+// mark.calcBMI();
+// console.log(john, mark);
+// console.log(john["bmi"], mark["bmi"]);
+
+// if (mark.calcBMI() > john.calcBMI()) {
+//   console.log(mark["fullName"] + " has the highest BMI, it is " + mark["bmi"]);
+// } else if (john["bmi"] > mark["bmi"]) {
+//   console.log(john["fullName"] + " has the highest BMI, it is " + john["bmi"]);
+// } else {
+//   console.log(
+//     "It's a draw " +
+//       mark["fullName"] +
+//       " and " +
+//       john["fullName"] +
+//       " have the same BMI."
+//   );
+// }
+
+/*
+ CODING CHALLENGE 5
+
+Remember the tip calculator challenge? Let's create a more advanced version using everything we learned!
+This time, John and his family went to 5 different restaurants. The bills were $124, $48, $268, $180 and $42.
+John likes to tip 20% of the bill when the bill is less than $50, 15% when the bill is between $50 and $200, and 10% if the bill is more than $200.
+Implement a tip calculator using objects and loops:
+1. Create an object with an array for the bill values
+2. Add a method to calculate the tip
+3. This method should include a loop to iterate over all the paid bills and do the tip calculations
+4. As an output, create 1) a new array containing all tips, and 2) an array containing final paid amounts (bill + tip). HINT: Start with two empty arrays [] as properties and then fill them up in the loop.
+*/
+
+var john = {
+  fullName: "John Smith",
+  bills: [124, 48, 268, 180, 42],
+  calcTips: function () {
+    this.tips = [];
+    this.total = [];
+
+    for (var i = 0; i < this.bills.length; i++) {
+      var percentage;
+      var bill = this.bills[i];
+
+      // get the tipping percentages
+      if (bill < 50) {
+        percentage = 0.2;
+      } else if (bill >= 50 && bill < 200) {
+        percentage = 0.15;
+      } else {
+        percentage = 0.1;
+      }
+
+      // add results to the corresponding arrays
+      this.tips[i] = bill * percentage;
+      this.total[i] = bill + bill * percentage;
+    }
+  },
+};
+
+john.calcTips();
+console.log(john);
