@@ -191,35 +191,35 @@ Implement a tip calculator using objects and loops:
 4. As an output, create 1) a new array containing all tips, and 2) an array containing final paid amounts (bill + tip). HINT: Start with two empty arrays [] as properties and then fill them up in the loop.
 */
 
-var john = {
-  fullName: "John Smith",
-  bills: [124, 48, 268, 180, 42],
-  calcTips: function () {
-    this.tips = [];
-    this.total = [];
+// var john = {
+//   fullName: "John Smith",
+//   bills: [124, 48, 268, 180, 42],
+//   calcTips: function () {
+//     this.tips = [];
+//     this.total = [];
 
-    for (var i = 0; i < this.bills.length; i++) {
-      var percentage;
-      var bill = this.bills[i];
+//     for (var i = 0; i < this.bills.length; i++) {
+//       var percentage;
+//       var bill = this.bills[i];
 
-      // get the tipping percentages
-      if (bill < 50) {
-        percentage = 0.2;
-      } else if (bill >= 50 && bill < 200) {
-        percentage = 0.15;
-      } else {
-        percentage = 0.1;
-      }
+//       // get the tipping percentages
+//       if (bill < 50) {
+//         percentage = 0.2;
+//       } else if (bill >= 50 && bill < 200) {
+//         percentage = 0.15;
+//       } else {
+//         percentage = 0.1;
+//       }
 
-      // add results to the corresponding arrays
-      this.tips[i] = bill * percentage;
-      this.total[i] = bill + bill * percentage;
-    }
-  },
-};
+//       // add results to the corresponding arrays
+//       this.tips[i] = bill * percentage;
+//       this.total[i] = bill + bill * percentage;
+//     }
+//   },
+// };
 
-john.calcTips();
-console.log(john);
+// john.calcTips();
+// console.log(john);
 
 /*
 EXTRA AFTER FINISHING: Mark's family also went on a holiday, going to 4 different restaurants. The bills were $77, $375, $110, and $45.
@@ -230,60 +230,127 @@ Mark likes to tip 20% of the bill when the bill is less than $100, 10% when the 
 8. Log to the console which family paid the highest tips on average
 */
 
-var mark = {
-  fullName: "Mark Jones",
-  bills: [77, 475, 110, 45],
-  calcTips: function () {
-    this.tips = [];
-    this.total = [];
+// var mark = {
+//   fullName: "Mark Jones",
+//   bills: [77, 475, 110, 45],
+//   calcTips: function () {
+//     this.tips = [];
+//     this.total = [];
 
-    for (var i = 0; i < this.bills.length; i++) {
-      var percentage;
-      var bill = this.bills[i];
+//     for (var i = 0; i < this.bills.length; i++) {
+//       var percentage;
+//       var bill = this.bills[i];
 
-      // get the tipping percentages
-      if (bill < 100) {
-        percentage = 0.2;
-      } else if (bill >= 100 && bill < 300) {
-        percentage = 0.1;
-      } else {
-        percentage = 0.25;
-      }
+//       // get the tipping percentages
+//       if (bill < 100) {
+//         percentage = 0.2;
+//       } else if (bill >= 100 && bill < 300) {
+//         percentage = 0.1;
+//       } else {
+//         percentage = 0.25;
+//       }
 
-      // add results to the corresponding arrays
-      this.tips[i] = bill * percentage;
-      this.total[i] = bill + bill * percentage;
-    }
-  },
-};
+//       // add results to the corresponding arrays
+//       this.tips[i] = bill * percentage;
+//       this.total[i] = bill + bill * percentage;
+//     }
+//   },
+// };
 
-mark.calcTips();
-console.log(mark);
+// mark.calcTips();
+// console.log(mark);
 
-getAverage = function (tips) {
-  var total = 0;
-  for (var i = 0; i < tips.length; i++) {
-    total = total + tips[i];
+// getAverage = function (tips) {
+//   var total = 0;
+//   for (var i = 0; i < tips.length; i++) {
+//     total = total + tips[i];
+//   }
+//   return total / tips.length;
+// };
+
+// john.average = getAverage(john.tips);
+// mark.average = getAverage(mark.tips);
+// console.log(john, mark);
+
+// if (john.average > mark.average) {
+//   console.log(
+//     john.fullName +
+//       "'s family pays higher tips, with an average of $" +
+//       john.average
+//   );
+// } else if (mark.average > john.average) {
+//   console.log(
+//     mark.fullName +
+//       "'s family pays higher tips, with an average of $" +
+//       mark.average
+//   );
+// } else {
+//   console.log("It's a draw!");
+// }
+
+/////////////////////////////
+// CODING CHALLENGE
+
+/*
+--- Let's build a fun quiz game in the console! ---
+1. Build a function constructor called Question to describe a question. A question should include:
+a) question itself
+b) the answers from which the player can choose the correct one (choose an adequate data structure here, array, object, etc.)
+c) correct answer (I would use a number for this)
+2. Create a couple of questions using the constructor
+3. Store them all inside an array
+4. Select one random question and log it on the console, together with the possible answers (each question should have a number) (Hint: write a method for the Question objects for this task).
+5. Use the 'prompt' function to ask the user for the correct answer. The user should input the number of the correct answer such as you displayed it on Task 4.
+6. Check if the answer is correct and print to the console whether the answer is correct ot nor (Hint: write another method for this).
+7. Suppose this code would be a plugin for other programmers to use in their code. So make sure that all your code is private and doesn't interfere with the other programmers code (Hint: we learned a special technique to do exactly that).
+*/
+
+(function () {
+  function Question(question, answers, correct) {
+    this.question = question;
+    this.answers = answers;
+    this.correct = correct;
   }
-  return total / tips.length;
-};
 
-john.average = getAverage(john.tips);
-mark.average = getAverage(mark.tips);
-console.log(john, mark);
+  Question.prototype.displayQuestion = function () {
+    console.log(this.question);
 
-if (john.average > mark.average) {
-  console.log(
-    john.fullName +
-      "'s family pays higher tips, with an average of $" +
-      john.average
+    for (var i = 0; i < this.answers.length; i++) {
+      console.log(i + ": " + this.answers[i]);
+    }
+  };
+
+  Question.prototype.checkAnswer = function (ans) {
+    if (ans === this.correct) {
+      console.log("thats right!");
+    } else {
+      console.log("thats not right, hard luck");
+    }
+  };
+
+  var q1 = new Question(
+    "What color is blue?",
+    ["blue", "black", "purple", "green"],
+    0
   );
-} else if (mark.average > john.average) {
-  console.log(
-    mark.fullName +
-      "'s family pays higher tips, with an average of $" +
-      mark.average
+  var q2 = new Question(
+    "What do you call bread?",
+    ["bread", "brack", "bovine", "botato"],
+    0
   );
-} else {
-  console.log("It's a draw!");
-}
+  var q3 = new Question(
+    "Who does number 2 work for?",
+    ["her", "him", "them", "everyone"],
+    3
+  );
+
+  var questions = [q1, q2, q3];
+
+  var questNum = Math.floor(Math.random() * questions.length);
+
+  questions[questNum].displayQuestion();
+
+  var answer = parseInt(prompt("Please select the correct answer"));
+
+  questions[questNum].checkAnswer(answer);
+})();
